@@ -39,6 +39,7 @@ Partial Class Form1
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btn_getSize = New System.Windows.Forms.Button()
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'Label18
@@ -135,7 +136,7 @@ Partial Class Form1
         '
         'lst_Forms
         '
-        Me.lst_Forms.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lst_Forms.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
         Me.lst_Forms.Location = New System.Drawing.Point(12, 72)
         Me.lst_Forms.Name = "lst_Forms"
         Me.lst_Forms.Size = New System.Drawing.Size(840, 366)
@@ -153,7 +154,7 @@ Partial Class Form1
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "Größe"
+        Me.ColumnHeader3.Text = "GrößeT"
         '
         'btn_getSize
         '
@@ -164,6 +165,10 @@ Partial Class Form1
         Me.btn_getSize.TabIndex = 54
         Me.btn_getSize.Text = "Do"
         Me.btn_getSize.UseVisualStyleBackColor = True
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "GrößeB"
         '
         'Form1
         '
@@ -207,4 +212,5 @@ Partial Class Form1
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents btn_getSize As Button
+    Friend WithEvents ColumnHeader4 As ColumnHeader
 End Class

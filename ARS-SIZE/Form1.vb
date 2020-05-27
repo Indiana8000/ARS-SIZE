@@ -50,6 +50,7 @@
         alForms = oServer.GetListForm()
         alForms.Sort()
         iCount = 0
+        My.Computer.FileSystem.WriteAllText("size.csv", "NAME;SCHEMAID;TYPE;COUNT;SIZE-T;SIZE-B" & vbCrLf, True)
         For Each sFormName As String In alForms
             iCount = iCount + 1
             Me.Text = "ARS-SIZE " & iCount & "/" & alForms.Count
@@ -83,7 +84,21 @@
                         lvItem.SubItems.Add("---")
                         csv = csv & ";"
                     End Try
+
+                    Try
+                        xsql = oServer.GetListSQL("SELECT ROUND(SUM(bytes)/1024/1024/1024, 2) FROM (SELECT segment_name table_name, bytes FROM user_segments WHERE segment_name LIKE 'B" & schemaid & "C%' AND segment_type IN ('TABLE', 'TABLE PARTITION', 'TABLE SUBPARTITION') UNION SELECT i.table_name, s.bytes FROM user_indexes i, user_segments s WHERE s.segment_name = i.index_name AND   s.segment_type IN ('INDEX', 'INDEX PARTITION', 'INDEX SUBPARTITION') AND i.table_name LIKE 'B" & schemaid & "C%' UNION SELECT l.table_name, s.bytes FROM user_lobs l, user_segments s WHERE s.segment_name = l.segment_name AND   s.segment_type in ('LOBSEGMENT', 'LOB PARTITION', 'LOB SUBPARTITION') AND l.table_name LIKE 'B" & schemaid & "C%' UNION SELECT l.table_name, s.bytes FROM user_lobs l, user_segments s WHERE s.segment_name = l.index_name AND   s.segment_type = 'LOBINDEX' AND l.table_name LIKE 'B" & schemaid & "C%')", 1)
+                        sFormName = xsql.Rows(0).Item(0).ToString
+                        lvItem.SubItems.Add(sFormName)
+                        csv = csv & ";" & sFormName
+                    Catch ex As Exception
+                        lvItem.SubItems.Add("---")
+                        csv = csv & ";"
+                    End Try
+
+
                 Else
+                    lvItem.SubItems.Add("---")
+                    csv = csv & ";"
                     lvItem.SubItems.Add("---")
                     csv = csv & ";"
                     lvItem.SubItems.Add("---")
