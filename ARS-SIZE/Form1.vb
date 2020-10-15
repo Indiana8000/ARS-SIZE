@@ -2,7 +2,7 @@
     Dim oServer As BMC.ARSystem.Server
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Date.Now.Year > 2020 Or Date.Now.Month > 9 Then
+        If Date.Now.Year > 2020 Or Date.Now.Month > 12 Then
             MsgBox("Trial Period Expired! Please contact the Developer.", vbExclamation, "Unregistered Version")
             Application.Exit()
         End If
@@ -12,6 +12,9 @@
         txt_Server.Text = My.Settings.Server
         txt_Port.Text = My.Settings.Port
         txt_Username.Text = My.Settings.Username
+        If txt_Server.Text.Length > 0 Then
+            txt_Password.Select()
+        End If
     End Sub
 
     Private Sub btn_Connect_Click(sender As Object, e As EventArgs) Handles btn_Connect.Click

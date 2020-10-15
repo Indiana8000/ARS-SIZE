@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("Andreas Kreisl")>
 <Assembly: AssemblyProduct("ARS-SIZE")>
-<Assembly: AssemblyCopyright("Copyright © 2020 Andreas Kreisl")>
+<Assembly: AssemblyCopyright("Copyright © 2020 - Andreas Kreisl")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

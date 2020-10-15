@@ -38,8 +38,8 @@ Partial Class Form1
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btn_getSize = New System.Windows.Forms.Button()
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btn_getSize = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label18
@@ -156,6 +156,10 @@ Partial Class Form1
         '
         Me.ColumnHeader3.Text = "GrößeT"
         '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "GrößeB"
+        '
         'btn_getSize
         '
         Me.btn_getSize.Enabled = False
@@ -165,10 +169,6 @@ Partial Class Form1
         Me.btn_getSize.TabIndex = 54
         Me.btn_getSize.Text = "Do"
         Me.btn_getSize.UseVisualStyleBackColor = True
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "GrößeB"
         '
         'Form1
         '
@@ -190,7 +190,7 @@ Partial Class Form1
         Me.Controls.Add(Me.txt_Server)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "ARS-SIZE"
+        Me.Text = "ARS-SIZE © Andreas Kreisl"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
