@@ -2,7 +2,7 @@
     Dim oServer As BMC.ARSystem.Server
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Date.Now.Year > 2020 Or Date.Now.Month > 12 Then
+        If Date.Now.Year > 2025 Or Date.Now.Month > 12 Then
             MsgBox("Trial Period Expired! Please contact the Developer.", vbExclamation, "Unregistered Version")
             Application.Exit()
         End If
